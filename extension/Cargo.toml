@@ -1,0 +1,27 @@
+[package]
+name = "skywave"
+version = "1.0.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+description = "Audio extension for the SkyWave Arma 3 mod"
+publish = false
+
+[lib]
+name = "skywave"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+aes = "0.8"
+cbc = { version = "0.1", features = ["block-padding"] }
+cpal = "0.15"
+native-tls = "0.2"
+serde_json = "1"
+symphonia = { version = "0.5", default-features = false, features = ["mp3"] }
+
+[build-dependencies]
+cmake = "0.1"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

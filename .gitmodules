@@ -1,0 +1,3 @@
+[submodule "extension/vendor/faad2"]
+	path = extension/vendor/faad2
+	url = https://github.com/FreewareAdvancedAudio/faad2.git

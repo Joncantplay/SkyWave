@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="SkyWave">
+    <Package name="zeus">
+        <Key ID="STR_skw_zeus_locked">
+            <English>Only Zeus can operate this radio now.</English>
+            <German>Dieses Radio kann jetzt nur noch Zeus bedienen.</German>
+        </Key>
+        <Key ID="STR_skw_zeus_moduleMakeRadio">
+            <English>Turn object into radio</English>
+            <German>Objekt zum Radio machen</German>
+        </Key>
+        <Key ID="STR_skw_zeus_moduleRadio">
+            <English>SkyWave radio</English>
+            <German>SkyWave-Radio</German>
+        </Key>
+        <Key ID="STR_skw_zeus_moduleRemoveRadio">
+            <English>Remove radio</English>
+            <German>Radio entfernen</German>
+        </Key>
+        <Key ID="STR_skw_zeus_moduleZeusOnly">
+            <English>Zeus control only</English>
+            <German>Nur Zeus darf bedienen</German>
+        </Key>
+        <Key ID="STR_skw_zeus_noObject">
+            <English>Place the module on an object.</English>
+            <German>Setze das Modul auf ein Objekt.</German>
+        </Key>
+        <Key ID="STR_skw_zeus_noRadio">
+            <English>Place the module on a vehicle or object with a radio.</English>
+            <German>Setze das Modul auf ein Fahrzeug oder Objekt mit Radio.</German>
+        </Key>
+        <Key ID="STR_skw_zeus_radioAdded">
+            <English>The object is now a radio. Players operate it from close by.</English>
+            <German>Das Objekt ist jetzt ein Radio. Spieler bedienen es aus der Nähe.</German>
+        </Key>
+        <Key ID="STR_skw_zeus_radioRemoved">
+            <English>Radio removed. "Turn object into radio" gives it back.</English>
+            <German>Radio entfernt. „Objekt zum Radio machen“ gibt es zurück.</German>
+        </Key>
+        <Key ID="STR_skw_zeus_unlocked">
+            <English>Players can operate this radio again.</English>
+            <German>Spieler können dieses Radio wieder bedienen.</German>
+        </Key>
+    </Package>
+</Project>

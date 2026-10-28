@@ -1,0 +1,10 @@
+name = "SkyWave";
+author = "Joncantplay";
+picture = "\z\skw\addons\main\data\logo_ca.paa";
+logo = "\z\skw\addons\main\data\logo_ca.paa";
+logoOver = "\z\skw\addons\main\data\logo_ca.paa";
+logoSmall = "\z\skw\addons\main\data\logo_ca.paa";
+tooltip = "SkyWave - Internet radio";
+overview = "Live internet radio in vehicles and placed radios: MP3, AAC, AAC+ and HLS streams with 3D audio, multiplayer sync, station logos and album covers, Streamer Mode and Zeus support.";
+actionName = "GitHub";
+action = "https://github.com/Joncantplay/SkyWave";

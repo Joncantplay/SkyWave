@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="SkyWave">
+    <Package name="objects">
+        <Key ID="STR_skw_objects_attributeOff">
+            <English>(off)</English>
+            <German>(aus)</German>
+        </Key>
+        <Key ID="STR_skw_objects_attributeStation">
+            <English>Station at mission start</English>
+            <German>Sender bei Missionsstart</German>
+        </Key>
+        <Key ID="STR_skw_objects_attributeStation_tooltip">
+            <English>Station the radio plays from the start; (off) for a radio that starts switched off. Stream URLs or stations from a server list: if (isServer) then {[this, "URL"] call skw_core_fnc_setStation} in the init field.</English>
+            <German>Sender, den das Radio von Anfang an spielt; (aus) für ein ausgeschaltetes Radio. Stream-URLs oder Sender aus einer Server-Liste: if (isServer) then {[this, "URL"] call skw_core_fnc_setStation} im Init-Feld.</German>
+        </Key>
+        <Key ID="STR_skw_objects_attributeVolume">
+            <English>Radio volume</English>
+            <German>Radiolautstärke</German>
+        </Key>
+        <Key ID="STR_skw_objects_attributeVolume_tooltip">
+            <English>Volume the radio starts with.</English>
+            <German>Lautstärke, mit der das Radio startet.</German>
+        </Key>
+        <Key ID="STR_skw_objects_radio">
+            <English>SkyWave radio</English>
+            <German>SkyWave-Radio</German>
+        </Key>
+    </Package>
+</Project>

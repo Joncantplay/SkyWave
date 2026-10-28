@@ -1,0 +1,26 @@
+name = "SkyWave"
+author = "Joncantplay"
+prefix = "skw"
+mainprefix = "z"
+
+[version]
+git_hash = 0
+
+[files]
+include = [
+    "mod.cpp",
+    "LICENSE",
+    "THIRD_PARTY_LICENSES.md",
+    "*_x64.dll",
+]
+
+[properties]
+author = "Joncantplay"
+url = "https://github.com/Joncantplay/SkyWave"
+
+[hemtt.paa]
+enabled = true
+
+# Signed by hand with the SkyWave key (skywave.bikey), the same for every version.
+[hemtt.release]
+sign = false

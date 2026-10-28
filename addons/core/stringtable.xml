@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="SkyWave">
+    <Package name="core">
+        <Key ID="STR_skw_core_allowCustomImages">
+            <English>Allow images for custom streams</English>
+            <German>Bilder für eigene Streams erlauben</German>
+        </Key>
+        <Key ID="STR_skw_core_allowCustomImages_tooltip">
+            <English>Show logos and album covers for streams played by URL (custom URLs and players' own stations). Off: those show the default radio icon; built-in and server stations keep their pictures.</English>
+            <German>Logos und Album-Cover für Streams zeigen, die per URL laufen (eigene URLs und eigene Sender der Spieler). Aus: diese zeigen das Standard-Radiosymbol; mitgelieferte und Server-Sender behalten ihre Bilder.</German>
+        </Key>
+        <Key ID="STR_skw_core_allowCustomUrls">
+            <English>Allow custom stream URLs</English>
+            <German>Eigene Stream-URLs erlauben</German>
+        </Key>
+        <Key ID="STR_skw_core_allowCustomUrls_tooltip">
+            <English>Players may tune radios to any stream address. Zeus can always do so.</English>
+            <German>Spieler dürfen Radios auf beliebige Stream-Adressen stellen. Zeus darf das immer.</German>
+        </Key>
+        <Key ID="STR_skw_core_allowOutside">
+            <English>Operate from outside</English>
+            <German>Bedienung von außen</German>
+        </Key>
+        <Key ID="STR_skw_core_allowOutside_tooltip">
+            <English>Players standing next to a vehicle (about 4 m from it) can operate its radio.</English>
+            <German>Spieler, die neben einem Fahrzeug stehen (etwa 4 m davon entfernt), können dessen Radio bedienen.</German>
+        </Key>
+        <Key ID="STR_skw_core_category_server">
+            <English>Server</English>
+            <German>Server</German>
+        </Key>
+        <Key ID="STR_skw_core_category_stations">
+            <English>Stations</English>
+            <German>Sender</German>
+        </Key>
+        <Key ID="STR_skw_core_copyrightFreeOnly">
+            <English>Copyright-free stations only</English>
+            <German>Nur urheberrechtsfreie Sender</German>
+        </Key>
+        <Key ID="STR_skw_core_copyrightFreeOnly_tooltip">
+            <English>Only stations marked as free of copyrighted music can be played on this server.</English>
+            <German>Auf diesem Server lassen sich nur Sender spielen, die als frei von urheberrechtlich geschützter Musik markiert sind.</German>
+        </Key>
+        <Key ID="STR_skw_core_defaultStations">
+            <English>SkyWave default stations</English>
+            <German>SkyWave-Standardsender</German>
+        </Key>
+        <Key ID="STR_skw_core_defaultStations_tooltip">
+            <English>Show the stations that come with SkyWave. Turn off to offer only your own stations.</English>
+            <German>Die mit SkyWave gelieferten Sender anzeigen. Ausschalten, um nur eigene Sender anzubieten.</German>
+        </Key>
+        <Key ID="STR_skw_core_driverCommanderOnly">
+            <English>Driver and commander only</English>
+            <German>Nur Fahrer und Kommandant</German>
+        </Key>
+        <Key ID="STR_skw_core_driverCommanderOnly_tooltip">
+            <English>Inside a vehicle only the driver (pilot) and the commander can operate the radio. Zeus always can.</English>
+            <German>Im Fahrzeug können nur Fahrer (Pilot) und Kommandant das Radio bedienen. Zeus kann es immer.</German>
+        </Key>
+        <Key ID="STR_skw_core_engineOnly">
+            <English>Radio only with engine running</English>
+            <German>Radio nur bei laufendem Motor</German>
+        </Key>
+        <Key ID="STR_skw_core_engineOnly_tooltip">
+            <English>Vehicle radios fall silent while the engine is off and play on when it starts. Placed radios are not affected.</English>
+            <German>Fahrzeugradios verstummen, solange der Motor aus ist, und spielen weiter, sobald er läuft. Aufgestellte Radios sind nicht betroffen.</German>
+        </Key>
+        <Key ID="STR_skw_core_noCustomUrls">
+            <English>Custom stream URLs are disabled on this server.</English>
+            <German>Eigene Stream-URLs sind auf diesem Server deaktiviert.</German>
+        </Key>
+        <Key ID="STR_skw_core_noPermission">
+            <English>You cannot operate this radio from here.</English>
+            <German>Du kannst dieses Radio von hier aus nicht bedienen.</German>
+        </Key>
+        <Key ID="STR_skw_core_onlyCopyrightFree">
+            <English>This server only allows copyright-free stations.</English>
+            <German>Dieser Server erlaubt nur urheberrechtsfreie Sender.</German>
+        </Key>
+        <Key ID="STR_skw_core_personalStations">
+            <English>My stations</English>
+            <German>Meine Sender</German>
+        </Key>
+        <Key ID="STR_skw_core_serverStations">
+            <English>Server stations (all players)</English>
+            <German>Server-Sender (für alle Spieler)</German>
+        </Key>
+        <Key ID="STR_skw_core_stationList_tooltip">
+            <English>Name | URL | options; next station ... Options: free (no copyrighted music), genre=..., logo=image URL or .paa</English>
+            <German>Name | URL | Optionen; nächster Sender ... Optionen: free (keine urheberrechtlich geschützte Musik), genre=..., logo=Bild-URL oder .paa</German>
+        </Key>
+        <Key ID="STR_skw_core_stationUnavailable">
+            <English>This station is not available here.</English>
+            <German>Dieser Sender ist hier nicht verfügbar.</German>
+        </Key>
+        <Key ID="STR_skw_core_versionMismatch">
+            <English>The server runs SkyWave %1, you have %2. Radios may not work fully; update to the same version.</English>
+            <German>Der Server nutzt SkyWave %1, du hast %2. Radios funktionieren eventuell nicht vollständig; aktualisiere auf dieselbe Version.</German>
+        </Key>
+    </Package>
+</Project>

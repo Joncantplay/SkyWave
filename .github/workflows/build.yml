@@ -1,0 +1,46 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: true
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            extension/target
+          key: rust-${{ hashFiles('extension/Cargo.toml', 'extension/build.rs') }}
+          restore-keys: rust-
+
+      - name: Test extension
+        working-directory: extension
+        run: cargo test --release
+
+      - name: Build extension
+        working-directory: extension
+        run: cargo build --release
+
+      - name: Copy extension
+        run: Copy-Item extension/target/release/skywave.dll skywave_x64.dll
+
+      - uses: arma-actions/hemtt@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build mod
+        run: hemtt release --no-archive
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skywave
+          path: .hemttout/release/

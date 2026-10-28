@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="SkyWave">
+    <Package name="ui">
+        <Key ID="STR_skw_ui_action">
+            <English>SkyWave radio</English>
+            <German>SkyWave-Radio</German>
+        </Key>
+        <Key ID="STR_skw_ui_backToStations">
+            <English>Back to stations</English>
+            <German>Zurück zu den Sendern</German>
+        </Key>
+        <Key ID="STR_skw_ui_category">
+            <English>Controls</English>
+            <German>Bedienung</German>
+        </Key>
+        <Key ID="STR_skw_ui_clickToCopy">
+            <English>Click to copy the title</English>
+            <German>Klicken, um den Titel zu kopieren</German>
+        </Key>
+        <Key ID="STR_skw_ui_close">
+            <English>Close</English>
+            <German>Schließen</German>
+        </Key>
+        <Key ID="STR_skw_ui_copied">
+            <English>Copied: %1</English>
+            <German>Kopiert: %1</German>
+        </Key>
+        <Key ID="STR_skw_ui_copyFailed">
+            <English>Could not copy the title.</English>
+            <German>Der Titel konnte nicht kopiert werden.</German>
+        </Key>
+        <Key ID="STR_skw_ui_copyrightFree">
+            <English>Copyright-free</English>
+            <German>Urheberrechtsfrei</German>
+        </Key>
+        <Key ID="STR_skw_ui_copyrightFreeTooltip">
+            <English>The station plays no copyrighted music, so it stays audible in Streamer Mode.</English>
+            <German>Der Sender spielt keine urheberrechtlich geschützte Musik und bleibt im Streamer Mode hörbar.</German>
+        </Key>
+        <Key ID="STR_skw_ui_customStream">
+            <English>Custom stream</English>
+            <German>Eigener Stream</German>
+        </Key>
+        <Key ID="STR_skw_ui_customUrl">
+            <English>Custom stream URL</English>
+            <German>Eigene Stream-URL</German>
+        </Key>
+        <Key ID="STR_skw_ui_delete">
+            <English>Delete</English>
+            <German>Löschen</German>
+        </Key>
+        <Key ID="STR_skw_ui_favAdd">
+            <English>Add to favourites (shown at the top of the list)</English>
+            <German>Zu den Favoriten (stehen oben in der Liste)</German>
+        </Key>
+        <Key ID="STR_skw_ui_favRemove">
+            <English>Remove from favourites</English>
+            <German>Aus den Favoriten entfernen</German>
+        </Key>
+        <Key ID="STR_skw_ui_freeMark">
+            <English>(copyright-free)</English>
+            <German>(urheberrechtsfrei)</German>
+        </Key>
+        <Key ID="STR_skw_ui_freeOnly">
+            <English>Copyright-free only</English>
+            <German>Nur urheberrechtsfrei</German>
+        </Key>
+        <Key ID="STR_skw_ui_freeOnlyTooltip">
+            <English>Show only stations without copyrighted music</English>
+            <German>Nur Sender ohne urheberrechtlich geschützte Musik anzeigen</German>
+        </Key>
+        <Key ID="STR_skw_ui_genre">
+            <English>Genre</English>
+            <German>Genre</German>
+        </Key>
+        <Key ID="STR_skw_ui_genreOptional">
+            <English>Genre (optional)</English>
+            <German>Genre (optional)</German>
+        </Key>
+        <Key ID="STR_skw_ui_history">
+            <English>Recently played</English>
+            <German>Zuletzt gespielt</German>
+        </Key>
+        <Key ID="STR_skw_ui_historyEmpty">
+            <English>No tracks yet</English>
+            <German>Noch keine Titel</German>
+        </Key>
+        <Key ID="STR_skw_ui_historyTooltip">
+            <English>Shows the last tracks of this radio; click one to copy it</English>
+            <German>Zeigt die letzten Titel dieses Radios; Klick kopiert einen Titel</German>
+        </Key>
+        <Key ID="STR_skw_ui_invalidUrl">
+            <English>Please enter an address starting with http:// or https://</English>
+            <German>Bitte eine Adresse eingeben, die mit http:// oder https:// beginnt</German>
+        </Key>
+        <Key ID="STR_skw_ui_keyNextStation">
+            <English>Next station</English>
+            <German>Nächster Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_keyPrevStation">
+            <English>Previous station</English>
+            <German>Vorheriger Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_keyRadioHint">
+            <English>Works for the vehicle you sit in or the radio you look at, without opening the window.</English>
+            <German>Wirkt auf das Fahrzeug, in dem du sitzt, oder das Radio, das du ansiehst, ohne das Fenster zu öffnen.</German>
+        </Key>
+        <Key ID="STR_skw_ui_keyVolumeDown">
+            <English>Radio quieter</English>
+            <German>Radio leiser</German>
+        </Key>
+        <Key ID="STR_skw_ui_keyVolumeUp">
+            <English>Radio louder</English>
+            <German>Radio lauter</German>
+        </Key>
+        <Key ID="STR_skw_ui_keybind">
+            <English>Open radio</English>
+            <German>Radio öffnen</German>
+        </Key>
+        <Key ID="STR_skw_ui_logoOptional">
+            <English>Logo (optional)</English>
+            <German>Logo (optional)</German>
+        </Key>
+        <Key ID="STR_skw_ui_logoTooltip">
+            <English>Image URL, a web page to take the logo from, or a .paa path. Leave empty to find the logo automatically.</English>
+            <German>Bild-URL, eine Webseite, von der das Logo genommen wird, oder ein .paa-Pfad. Leer lassen, um das Logo automatisch zu suchen.</German>
+        </Key>
+        <Key ID="STR_skw_ui_manage">
+            <English>Manage stations</English>
+            <German>Sender verwalten</German>
+        </Key>
+        <Key ID="STR_skw_ui_managerTitle">
+            <English>Stations</English>
+            <German>Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_muteForMe">
+            <English>Mute for me</English>
+            <German>Für mich stumm</German>
+        </Key>
+        <Key ID="STR_skw_ui_myStation">
+            <English>My station</English>
+            <German>Mein Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_name">
+            <English>Name</English>
+            <German>Name</German>
+        </Key>
+        <Key ID="STR_skw_ui_needName">
+            <English>Please enter a name for the station.</English>
+            <German>Bitte gib einen Namen für den Sender ein.</German>
+        </Key>
+        <Key ID="STR_skw_ui_new">
+            <English>New</English>
+            <German>Neu</German>
+        </Key>
+        <Key ID="STR_skw_ui_noStations">
+            <English>No station available. Choose one from the list or enter a URL.</English>
+            <German>Kein Sender verfügbar. Wähle einen aus der Liste oder gib eine URL ein.</German>
+        </Key>
+        <Key ID="STR_skw_ui_noTitle">
+            <English>No track information</English>
+            <German>Keine Titelinformation</German>
+        </Key>
+        <Key ID="STR_skw_ui_notePersonal">
+            <English>Only you see these.</English>
+            <German>Nur du siehst diese.</German>
+        </Key>
+        <Key ID="STR_skw_ui_noteServer">
+            <English>All players see these.</English>
+            <German>Alle Spieler sehen diese.</German>
+        </Key>
+        <Key ID="STR_skw_ui_noteServerReadOnly">
+            <English>Only admins can change these.</English>
+            <German>Nur Admins können diese ändern.</German>
+        </Key>
+        <Key ID="STR_skw_ui_off">
+            <English>Radio off</English>
+            <German>Radio aus</German>
+        </Key>
+        <Key ID="STR_skw_ui_playUrl">
+            <English>Play URL</English>
+            <German>URL abspielen</German>
+        </Key>
+        <Key ID="STR_skw_ui_random">
+            <English>Random station</English>
+            <German>Zufälliger Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_random_tooltip">
+            <English>Plays a random station from the list (search and filter apply).</English>
+            <German>Spielt einen zufälligen Sender aus der Liste (Suche und Filter gelten).</German>
+        </Key>
+        <Key ID="STR_skw_ui_removed">
+            <English>Deleted: %1</English>
+            <German>Gelöscht: %1</German>
+        </Key>
+        <Key ID="STR_skw_ui_resetWindow">
+            <English>Reset radio window</English>
+            <German>Radio-Fenster zurücksetzen</German>
+        </Key>
+        <Key ID="STR_skw_ui_resetWindow_tooltip">
+            <English>Tick and confirm with OK: the radio window goes back to the middle of the screen at its normal size. The box unticks itself afterwards.</English>
+            <German>Anhaken und mit OK bestätigen: Das Radio-Fenster kommt zurück in die Bildschirmmitte und auf normale Größe. Der Haken verschwindet danach von selbst.</German>
+        </Key>
+        <Key ID="STR_skw_ui_resizeHint">
+            <English>Drag to resize the window</English>
+            <German>Ziehen, um die Fenstergröße zu ändern</German>
+        </Key>
+        <Key ID="STR_skw_ui_retry">
+            <English>Reconnect now</English>
+            <German>Jetzt neu verbinden</German>
+        </Key>
+        <Key ID="STR_skw_ui_save">
+            <English>Save</English>
+            <German>Speichern</German>
+        </Key>
+        <Key ID="STR_skw_ui_saved">
+            <English>Saved: %1</English>
+            <German>Gespeichert: %1</German>
+        </Key>
+        <Key ID="STR_skw_ui_scale">
+            <English>Radio window size</English>
+            <German>Größe des Radio-Fensters</German>
+        </Key>
+        <Key ID="STR_skw_ui_scale_tooltip">
+            <English>Makes text, buttons and title bar of the radio window bigger or smaller.</English>
+            <German>Macht Schrift, Knöpfe und Titelleiste des Radio-Fensters größer oder kleiner.</German>
+        </Key>
+        <Key ID="STR_skw_ui_scrollAction">
+            <English>Scroll wheel entry</English>
+            <German>Mausrad-Eintrag</German>
+        </Key>
+        <Key ID="STR_skw_ui_scrollAction_tooltip">
+            <English>Show "SkyWave radio" in the action menu (scroll wheel). With ACE the radio is also in the interaction menu.</English>
+            <German>„SkyWave-Radio“ im Aktionsmenü (Mausrad) anzeigen. Mit ACE gibt es das Radio auch im Interaktionsmenü.</German>
+        </Key>
+        <Key ID="STR_skw_ui_search">
+            <English>Search</English>
+            <German>Suche</German>
+        </Key>
+        <Key ID="STR_skw_ui_selectFirst">
+            <English>Select a station in the list first.</English>
+            <German>Wähle zuerst einen Sender in der Liste aus.</German>
+        </Key>
+        <Key ID="STR_skw_ui_sortHint">
+            <English>Click to sort, click again to reverse</English>
+            <German>Klicken zum Sortieren, nochmal klicken zum Umdrehen</German>
+        </Key>
+        <Key ID="STR_skw_ui_station">
+            <English>Station</English>
+            <German>Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusConnected">
+            <English>Connected</English>
+            <German>Verbunden</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusLoading">
+            <English>Loading...</English>
+            <German>Lädt...</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusMuted">
+            <English>Muted for you</English>
+            <German>Für dich stummgeschaltet</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusMutedAll">
+            <English>All radios muted for you</English>
+            <German>Alle Radios für dich stumm</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusMutedEngine">
+            <English>Silent: the engine is off</English>
+            <German>Still: der Motor ist aus</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusMutedServer">
+            <English>Not allowed here: server plays copyright-free stations only</English>
+            <German>Hier nicht erlaubt: Server spielt nur urheberrechtsfreie Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusMutedStreamer">
+            <English>Muted by Streamer Mode (not copyright-free)</English>
+            <German>Stumm durch Streamer Mode (nicht urheberrechtsfrei)</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusOff">
+            <English>Off</English>
+            <German>Aus</German>
+        </Key>
+        <Key ID="STR_skw_ui_statusRetrying">
+            <English>Connection lost, retrying...%1</English>
+            <German>Verbindung verloren, neuer Versuch...%1</German>
+        </Key>
+        <Key ID="STR_skw_ui_streamUrl">
+            <English>Stream URL</English>
+            <German>Stream-URL</German>
+        </Key>
+        <Key ID="STR_skw_ui_streamerOff">
+            <English>Streamer Mode off</English>
+            <German>Streamer Mode aus</German>
+        </Key>
+        <Key ID="STR_skw_ui_streamerOn">
+            <English>STREAMER MODE ON</English>
+            <German>STREAMER MODE AN</German>
+        </Key>
+        <Key ID="STR_skw_ui_tabPersonal">
+            <English>My stations</English>
+            <German>Meine Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_tabServer">
+            <English>Server stations</English>
+            <German>Server-Sender</German>
+        </Key>
+        <Key ID="STR_skw_ui_turnOff">
+            <English>Turn off</English>
+            <German>Ausschalten</German>
+        </Key>
+        <Key ID="STR_skw_ui_turnOn">
+            <English>Turn on</English>
+            <German>Einschalten</German>
+        </Key>
+        <Key ID="STR_skw_ui_unmuteForMe">
+            <English>Unmute for me</English>
+            <German>Für mich wieder an</German>
+        </Key>
+        <Key ID="STR_skw_ui_volume">
+            <English>Volume: %1 %</English>
+            <German>Lautstärke: %1 %</German>
+        </Key>
+    </Package>
+</Project>

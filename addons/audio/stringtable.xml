@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="SkyWave">
+    <Package name="audio">
+        <Key ID="STR_skw_audio_category_audio">
+            <English>Audio</English>
+            <German>Audio</German>
+        </Key>
+        <Key ID="STR_skw_audio_category_status">
+            <English>Status</English>
+            <German>Status</German>
+        </Key>
+        <Key ID="STR_skw_audio_category_streamer">
+            <English>Streamer Mode</English>
+            <German>Streamer Mode</German>
+        </Key>
+        <Key ID="STR_skw_audio_covers">
+            <English>Show album covers</English>
+            <German>Album-Cover anzeigen</German>
+        </Key>
+        <Key ID="STR_skw_audio_covers_tooltip">
+            <English>Looks up the cover of the current track. Track titles are sent to musicbrainz.org and the image is loaded from coverartarchive.org.</English>
+            <German>Sucht das Cover zum aktuellen Titel. Dafür werden Songtitel an musicbrainz.org geschickt und das Bild von coverartarchive.org geladen.</German>
+        </Key>
+        <Key ID="STR_skw_audio_extensionMissing">
+            <English>Audio extension not loaded (BattlEye enabled or DLL missing?). Radios stay silent.</English>
+            <German>Audio-Extension nicht geladen (BattlEye aktiv oder DLL fehlt?). Radios bleiben stumm.</German>
+        </Key>
+        <Key ID="STR_skw_audio_forced">
+            <English>This setting is enforced by the server.</English>
+            <German>Diese Einstellung wird vom Server vorgegeben.</German>
+        </Key>
+        <Key ID="STR_skw_audio_keyMuteAll">
+            <English>Mute / unmute all radios</English>
+            <German>Alle Radios stumm / an</German>
+        </Key>
+        <Key ID="STR_skw_audio_keyStreamer">
+            <English>Toggle Streamer Mode</English>
+            <German>Streamer Mode an / aus</German>
+        </Key>
+        <Key ID="STR_skw_audio_masterVolume">
+            <English>Master volume</English>
+            <German>Gesamtlautstärke</German>
+        </Key>
+        <Key ID="STR_skw_audio_masterVolume_tooltip">
+            <English>Volume of all SkyWave radios. Only affects you.</English>
+            <German>Lautstärke aller SkyWave-Radios. Gilt nur für dich.</German>
+        </Key>
+        <Key ID="STR_skw_audio_msgConnecting">
+            <English>Connecting...</English>
+            <German>Verbinde...</German>
+        </Key>
+        <Key ID="STR_skw_audio_msgConnectionLost">
+            <English>Connection lost (%1), retrying...</English>
+            <German>Verbindung verloren (%1), neuer Versuch...</German>
+        </Key>
+        <Key ID="STR_skw_audio_msgLoading">
+            <English>Loading (%1)...</English>
+            <German>Lädt (%1)...</German>
+        </Key>
+        <Key ID="STR_skw_audio_msgNowPlaying">
+            <English>Now playing: %1</English>
+            <German>Jetzt läuft: %1</German>
+        </Key>
+        <Key ID="STR_skw_audio_msgPlaying">
+            <English>Playing</English>
+            <German>Läuft</German>
+        </Key>
+        <Key ID="STR_skw_audio_msgReconnecting">
+            <English>Reconnecting...</English>
+            <German>Verbinde neu...</German>
+        </Key>
+        <Key ID="STR_skw_audio_muteAll">
+            <English>Mute all radios</English>
+            <German>Alle Radios stumm</German>
+        </Key>
+        <Key ID="STR_skw_audio_muteAllOff">
+            <English>All radios audible again</English>
+            <German>Alle Radios wieder hörbar</German>
+        </Key>
+        <Key ID="STR_skw_audio_muteAllOn">
+            <English>All radios muted (only for you)</English>
+            <German>Alle Radios stumm (nur für dich)</German>
+        </Key>
+        <Key ID="STR_skw_audio_muteAll_tooltip">
+            <English>Silences every radio for you only. Other players keep hearing them.</English>
+            <German>Schaltet alle Radios nur für dich stumm. Andere Spieler hören sie weiter.</German>
+        </Key>
+        <Key ID="STR_skw_audio_muteUnfocused">
+            <English>Mute in background</English>
+            <German>Im Hintergrund stumm</German>
+        </Key>
+        <Key ID="STR_skw_audio_muteUnfocused_tooltip">
+            <English>Silence all radios while Arma is not the active window.</English>
+            <German>Alle Radios stumm, solange Arma nicht das aktive Fenster ist.</German>
+        </Key>
+        <Key ID="STR_skw_audio_range">
+            <English>Audible range</English>
+            <German>Hörweite</German>
+        </Key>
+        <Key ID="STR_skw_audio_range_tooltip">
+            <English>Distance in metres up to which radios can be heard.</English>
+            <German>Entfernung in Metern, bis zu der Radios zu hören sind.</German>
+        </Key>
+        <Key ID="STR_skw_audio_statusDisplay">
+            <English>Status messages</English>
+            <German>Statusmeldungen</German>
+        </Key>
+        <Key ID="STR_skw_audio_statusDisplay_tooltip">
+            <English>Where connection status and track changes are shown. Only for the radio you sit in, stand next to or have open.</English>
+            <German>Wo Verbindungsstatus und Titelwechsel angezeigt werden. Nur für das Radio, in dem du sitzt, neben dem du stehst oder das du geöffnet hast.</German>
+        </Key>
+        <Key ID="STR_skw_audio_statusOff">
+            <English>Off</English>
+            <German>Aus</German>
+        </Key>
+        <Key ID="STR_skw_audio_streamerMode">
+            <English>Streamer Mode</English>
+            <German>Streamer Mode</German>
+        </Key>
+        <Key ID="STR_skw_audio_streamerMode_tooltip">
+            <English>Silences stations that are not marked copyright-free, only for you. Other players are not affected.</English>
+            <German>Schaltet Sender, die nicht als urheberrechtsfrei markiert sind, nur für dich stumm. Andere Spieler merken davon nichts.</German>
+        </Key>
+        <Key ID="STR_skw_audio_streamerOff">
+            <English>Streamer Mode off</English>
+            <German>Streamer Mode aus</German>
+        </Key>
+        <Key ID="STR_skw_audio_streamerOn">
+            <English>Streamer Mode on: only copyright-free stations play for you</English>
+            <German>Streamer Mode an: bei dir laufen nur urheberrechtsfreie Sender</German>
+        </Key>
+        <Key ID="STR_skw_audio_vehicle3D">
+            <English>3D sound inside vehicles</English>
+            <German>3D-Ton im Fahrzeug</German>
+        </Key>
+        <Key ID="STR_skw_audio_vehicle3D_tooltip">
+            <English>Inside a vehicle, the radio sounds as if it came from the front centre of the cabin, in first and third person. Cars and boats only: tanks count as cars, helicopters and planes stay stereo. Off: plain stereo.</English>
+            <German>Im Fahrzeug klingt das Radio, als käme es vorne aus der Mitte der Kabine, in Ich- und Third-Person-Ansicht. Nur Autos und Boote: Panzer zählen dazu, Helikopter und Flugzeuge bleiben Stereo. Aus: normales Stereo.</German>
+        </Key>
+        <Key ID="STR_skw_audio_vehicleAll">
+            <English>All vehicles</English>
+            <German>Alle Fahrzeuge</German>
+        </Key>
+        <Key ID="STR_skw_audio_vehicleGround">
+            <English>Cars and boats only</English>
+            <German>Nur Autos und Boote</German>
+        </Key>
+        <Key ID="STR_skw_audio_vehicleStereo">
+            <English>Off (stereo)</English>
+            <German>Aus (Stereo)</German>
+        </Key>
+        <Key ID="STR_skw_audio_volumeBoost">
+            <English>Volume boost</English>
+            <German>Lautstärke-Verstärkung</German>
+        </Key>
+        <Key ID="STR_skw_audio_volumeBoost_tooltip">
+            <English>Multiplies the radio volume, for streams that are too quiet. Loud peaks are rounded off instead of distorting.</English>
+            <German>Vervielfacht die Radiolautstärke, für zu leise Streams. Laute Spitzen werden abgerundet statt zu verzerren.</German>
+        </Key>
+        <Key ID="STR_skw_audio_zeusMessages">
+            <English>Messages from Zeus radios</English>
+            <German>Meldungen von Zeus-Radios</German>
+        </Key>
+        <Key ID="STR_skw_audio_zeusMessages_tooltip">
+            <English>Show status and now-playing messages for radios a Zeus created. Off: only for normal radios.</English>
+            <German>Status- und Titelmeldungen auch für Radios zeigen, die ein Zeus erstellt hat. Aus: nur für normale Radios.</German>
+        </Key>
+    </Package>
+</Project>
