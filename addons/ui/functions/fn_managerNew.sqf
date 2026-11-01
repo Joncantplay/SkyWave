@@ -5,10 +5,14 @@ private _display = uiNamespace getVariable ["skw_ui_managerDisplay", displayNull
 if (isNull _display) exitWith {};
 
 skw_ui_managerIndex = -1;
+skw_ui_managerClass = "";
 {
     (_display displayCtrl _x) ctrlSetText "";
 } forEach [2201, 2202, 2203, 2204, 2304];
 (_display displayCtrl 2205) cbSetChecked false;
+{
+    (_display displayCtrl _x) call skw_ui_fnc_fieldTooltip;
+} forEach [2201, 2202, 2203, 2204];
 
 skw_ui_managerUpdating = true;
 (_display displayCtrl 2100) lnbSetCurSelRow -1;

@@ -26,6 +26,6 @@ switch (skw_audio_statusDisplay) do {
         _message call skw_audio_fnc_hint;
     };
     case 2: {
-        systemChat format ["SkyWave: %1", _message];
+        systemChat format ["SkyWave: %1", _message regexReplace ["\\n", ": "]];
     };
 };

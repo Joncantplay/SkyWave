@@ -34,7 +34,7 @@ switch (_function) do {
             skw_audio_history set [_id, _history];
         };
         if (_title != "") then {
-            [format [localize "STR_skw_audio_msgNowPlaying", _title], _id] call skw_audio_fnc_notify;
+            [format [localize "STR_skw_audio_msgNowPlaying", _id call skw_audio_fnc_stationName, _title], _id] call skw_audio_fnc_notify;
         };
     };
     case "logo": {

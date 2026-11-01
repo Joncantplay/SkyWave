@@ -22,18 +22,7 @@ if !(skw_ui_window isEqualTypeArray [0, 0, 0, 0]) then {
 };
 call skw_ui_fnc_layout;
 
-// Drag the title bar to move, the right/bottom edge or the corner to resize.
-{
-    _x params ["_idc", "_mode"];
-    private _control = _display displayCtrl _idc;
-    _control setVariable ["skw_ui_dragMode", _mode];
-    _control ctrlAddEventHandler ["MouseButtonDown", {
-        params ["_control", "_button"];
-        if (_button == 0) then {(_control getVariable "skw_ui_dragMode") call skw_ui_fnc_startDrag};
-    }];
-    _control ctrlAddEventHandler ["MouseButtonUp", {call skw_ui_fnc_stopDrag}];
-} forEach [[1017, "move"], [1622, "width"], [1623, "height"], [1620, "corner"]];
-_display displayAddEventHandler ["MouseButtonUp", {call skw_ui_fnc_stopDrag}];
+[_display, [[1017, "move"], [1622, "width"], [1623, "height"], [1620, "corner"]], "radio"] call skw_ui_fnc_addDragHandles;
 
 // Focused buttons pulse forever, so move the focus away after a couple of pulses.
 {
@@ -64,6 +53,7 @@ skw_ui_logoShown = "";
 skw_ui_volumeTouched = -10;
 skw_ui_stations = [_object, player] call skw_core_fnc_getStations;
 (_display displayCtrl 1702) cbSetChecked skw_ui_freeOnly;
+call skw_ui_fnc_fillGenres;
 call skw_ui_fnc_fillStations;
 skw_ui_historyShown = "";
 call skw_ui_fnc_showListMode;

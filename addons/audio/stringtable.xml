@@ -58,8 +58,8 @@
             <German>Lädt (%1)...</German>
         </Key>
         <Key ID="STR_skw_audio_msgNowPlaying">
-            <English>Now playing: %1</English>
-            <German>Jetzt läuft: %1</German>
+            <English>%1 - Now playing\n%2</English>
+            <German>%1 - Läuft gerade\n%2</German>
         </Key>
         <Key ID="STR_skw_audio_msgPlaying">
             <English>Playing</English>

@@ -33,7 +33,8 @@ private _id = _object getVariable ["skw_audio_id", ""];
 // A station played by URL may still be one of the listed (e.g. personal) stations.
 private _record = _station call skw_core_fnc_getStation;
 if (count _record == 0 && {_station != ""}) then {
-    private _index = skw_ui_stations findIf {(_x get "url") == _station};
+    private _mainUrl = (_station splitString " ") param [0, ""];
+    private _index = skw_ui_stations findIf {(_x get "url") == _mainUrl};
     if (_index >= 0) then {
         _record = skw_ui_stations select _index;
     };
@@ -123,11 +124,15 @@ private _streamerButton = _display displayCtrl 1602;
 _streamerButton ctrlSetText localize (["STR_skw_ui_streamerOff", "STR_skw_ui_streamerOn"] select skw_audio_streamerMode);
 _streamerButton ctrlSetTextColor ([[0.62, 0.64, 0.68, 1], [0.96, 0.58, 0.16, 1]] select skw_audio_streamerMode);
 
+// Shared volume, or the player's own one for this radio.
+private _ownVolume = _object getVariable ["skw_audio_ownVolume", -1];
+private _shownVolume = [_volume, _ownVolume] select (_ownVolume >= 0);
+(_display displayCtrl 1304) cbSetChecked (_ownVolume < 0);
 // Follow volume changes by others, but not while the player is dragging the slider.
 if (diag_tickTime - skw_ui_volumeTouched > 1) then {
-    (_display displayCtrl 1300) sliderSetPosition (_volume * 100);
+    (_display displayCtrl 1300) sliderSetPosition (_shownVolume * 100);
 };
-(_display displayCtrl 1301) ctrlSetText format [localize "STR_skw_ui_volume", round (_volume * 100)];
+(_display displayCtrl 1301) ctrlSetText format [localize "STR_skw_ui_volume", round (_shownVolume * 100)];
 
 // Highlight the current station in the (possibly filtered) list.
 private _list = _display displayCtrl 1100;

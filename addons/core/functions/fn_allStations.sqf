@@ -5,13 +5,14 @@
  *
  * Return: Stations by class <HASHMAP>
  */
-private _sources = [skw_core_serverStations, skw_core_personalStations, skw_core_scriptStations select 0, skw_core_defaultStations];
+private _sources = [skw_core_serverStations, skw_core_personalStations, skw_core_scriptStations select 0, skw_core_defaultStations, skw_core_disabledStations];
 if (_sources isEqualTo skw_core_stationIndexSources) exitWith {skw_core_stationIndex};
 
 call skw_core_fnc_syncScriptStations;
 private _all = createHashMap;
+private _disabled = skw_core_disabledStations call skw_core_fnc_disabledStationList;
 {
-    if (skw_core_defaultStations || {(_y get "source") != "default"}) then {
+    if ((skw_core_defaultStations || {(_y get "source") != "default"}) && {!(_x in _disabled)}) then {
         _all set [_x, _y];
     };
 } forEach skw_core_configStations;

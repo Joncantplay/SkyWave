@@ -5,6 +5,10 @@
             <English>SkyWave radio</English>
             <German>SkyWave-Radio</German>
         </Key>
+        <Key ID="STR_skw_ui_allGenres">
+            <English>All genres</English>
+            <German>Alle Genres</German>
+        </Key>
         <Key ID="STR_skw_ui_backToStations">
             <English>Back to stations</English>
             <German>Zurück zu den Sendern</German>
@@ -48,6 +52,26 @@
         <Key ID="STR_skw_ui_delete">
             <English>Delete</English>
             <German>Löschen</German>
+        </Key>
+        <Key ID="STR_skw_ui_disable">
+            <English>Switch off</English>
+            <German>Abschalten</German>
+        </Key>
+        <Key ID="STR_skw_ui_disabled">
+            <English>Switched off: %1</English>
+            <German>Abgeschaltet: %1</German>
+        </Key>
+        <Key ID="STR_skw_ui_disabledMark">
+            <English>(switched off)</English>
+            <German>(abgeschaltet)</German>
+        </Key>
+        <Key ID="STR_skw_ui_enable">
+            <English>Switch on again</English>
+            <German>Wieder einschalten</German>
+        </Key>
+        <Key ID="STR_skw_ui_enabled">
+            <English>Switched on again: %1</English>
+            <German>Wieder eingeschaltet: %1</German>
         </Key>
         <Key ID="STR_skw_ui_favAdd">
             <English>Add to favourites (shown at the top of the list)</English>
@@ -160,6 +184,14 @@
         <Key ID="STR_skw_ui_noTitle">
             <English>No track information</English>
             <German>Keine Titelinformation</German>
+        </Key>
+        <Key ID="STR_skw_ui_noteBuiltin">
+            <English>Switch off built-in stations for everyone on this server.</English>
+            <German>Mitgelieferte Sender für alle auf diesem Server abschalten.</German>
+        </Key>
+        <Key ID="STR_skw_ui_noteBuiltinReadOnly">
+            <English>Only admins can switch built-in stations off.</English>
+            <German>Nur Admins können mitgelieferte Sender abschalten.</German>
         </Key>
         <Key ID="STR_skw_ui_notePersonal">
             <English>Only you see these.</English>
@@ -286,8 +318,8 @@
             <German>Verbindung verloren, neuer Versuch...%1</German>
         </Key>
         <Key ID="STR_skw_ui_streamUrl">
-            <English>Stream URL</English>
-            <German>Stream-URL</German>
+            <English>Stream URL (backup URLs after a comma)</English>
+            <German>Stream-URL (Ausweich-URLs nach einem Komma)</German>
         </Key>
         <Key ID="STR_skw_ui_streamerOff">
             <English>Streamer Mode off</English>
@@ -296,6 +328,10 @@
         <Key ID="STR_skw_ui_streamerOn">
             <English>STREAMER MODE ON</English>
             <German>STREAMER MODE AN</German>
+        </Key>
+        <Key ID="STR_skw_ui_tabBuiltin">
+            <English>Built-in</English>
+            <German>Mitgeliefert</German>
         </Key>
         <Key ID="STR_skw_ui_tabPersonal">
             <English>My stations</English>
@@ -320,6 +356,14 @@
         <Key ID="STR_skw_ui_volume">
             <English>Volume: %1 %</English>
             <German>Lautstärke: %1 %</German>
+        </Key>
+        <Key ID="STR_skw_ui_volumeShared">
+            <English>For everyone</English>
+            <German>Für alle</German>
+        </Key>
+        <Key ID="STR_skw_ui_volumeSharedTooltip">
+            <English>Ticked: everyone hears the same volume. Unticked: only you hear your own volume.</English>
+            <German>Angehakt: alle hören dieselbe Lautstärke. Ohne Haken: nur du hörst deine eigene.</German>
         </Key>
     </Package>
 </Project>

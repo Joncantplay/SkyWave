@@ -35,6 +35,7 @@ class CfgFunctions {
             class logo {};
             class muteReason {};
             class notify {};
+            class stationName {};
             class onCallback {};
             class reset {};
             class retry {};

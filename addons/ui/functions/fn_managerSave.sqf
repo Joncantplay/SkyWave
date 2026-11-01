@@ -3,7 +3,7 @@
  * A new station with the name of an existing one replaces it.
  */
 private _display = uiNamespace getVariable ["skw_ui_managerDisplay", displayNull];
-if (isNull _display || {!skw_ui_managerEditable}) exitWith {};
+if (isNull _display || {!skw_ui_managerEditable} || {skw_ui_managerList == "builtin"}) exitWith {};
 
 private _message = _display displayCtrl 2304;
 private _name = trim ctrlText (_display displayCtrl 2201);
@@ -19,10 +19,16 @@ private _entry = [
 if (_name == "") exitWith {
     _message ctrlSetText localize "STR_skw_ui_needName";
 };
-private _lower = toLower _url;
-if !((_lower select [0, 7]) == "http://" || {(_lower select [0, 8]) == "https://"}) exitWith {
+// Backup addresses follow the main one, separated by commas.
+private _addresses = ((_url splitString ",") apply {trim _x}) select {_x != ""};
+private _invalid = _addresses findIf {
+    private _lower = toLower _x;
+    !((_lower select [0, 7]) == "http://" || {(_lower select [0, 8]) == "https://"})
+};
+if (_addresses isEqualTo [] || {_invalid >= 0}) exitWith {
     _message ctrlSetText localize "STR_skw_ui_invalidUrl";
 };
+_entry set [1, _addresses joinString ", "];
 
 private _index = skw_ui_managerIndex;
 if (_index < 0) then {

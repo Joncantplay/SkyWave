@@ -14,9 +14,11 @@ if (_station == "") exitWith {true};
 private _record = _station call skw_core_fnc_getStation;
 if (count _record > 0) exitWith {_record get "copyrightFree"};
 
+// Played by URL: compare the main address (backups may follow after a space).
+private _mainUrl = (_station splitString " ") param [0, ""];
 private _free = false;
 {
-    if ((_y get "copyrightFree") && {(_y get "url") == _station}) exitWith {
+    if ((_y get "copyrightFree") && {(_y get "url") == _mainUrl}) exitWith {
         _free = true;
     };
 } forEach (call skw_core_fnc_allStations);

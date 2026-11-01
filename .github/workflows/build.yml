@@ -19,16 +19,16 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             extension/target
-          key: rust-${{ hashFiles('extension/Cargo.toml', 'extension/build.rs') }}
+          key: rust-${{ hashFiles('extension/Cargo.lock', 'extension/build.rs') }}
           restore-keys: rust-
 
       - name: Test extension
         working-directory: extension
-        run: cargo test --release
+        run: cargo test --release --locked
 
       - name: Build extension
         working-directory: extension
-        run: cargo build --release
+        run: cargo build --release --locked
 
       - name: Copy extension
         run: Copy-Item extension/target/release/skywave.dll skywave_x64.dll

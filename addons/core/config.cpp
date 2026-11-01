@@ -43,6 +43,7 @@ class CfgFunctions {
             class allStations {};
             class applyState {};
             class canControl {};
+            class disabledStationList {};
             class getActiveRadios {};
             class getState {};
             class getStation {};

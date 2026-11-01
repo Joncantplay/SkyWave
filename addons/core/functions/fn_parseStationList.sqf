@@ -13,7 +13,9 @@ private _result = createHashMap;
 {
     _x params ["_name", "_url", "_genre", "_logo", "_free"];
     private _class = format ["%1:%2", _source, toLower _name];
-    private _station = [_class, _name, _url, [], _logo, _genre, "", _free, "true", [], false, _source] call skw_core_fnc_makeStation;
+    // Backup addresses follow the main one, separated by commas.
+    private _addresses = ((_url splitString ",") apply {trim _x}) select {_x != ""};
+    private _station = [_class, _name, _addresses param [0, ""], _addresses select [1], _logo, _genre, "", _free, "true", [], false, _source] call skw_core_fnc_makeStation;
     if (count _station > 0) then {
         _result set [_class, _station];
     };

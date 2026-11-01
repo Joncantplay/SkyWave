@@ -2,7 +2,7 @@
  * Station manager "Delete": removes the selected station.
  */
 private _display = uiNamespace getVariable ["skw_ui_managerDisplay", displayNull];
-if (isNull _display || {!skw_ui_managerEditable}) exitWith {};
+if (isNull _display || {!skw_ui_managerEditable} || {skw_ui_managerList == "builtin"}) exitWith {};
 
 if (skw_ui_managerIndex < 0) exitWith {
     (_display displayCtrl 2304) ctrlSetText localize "STR_skw_ui_selectFirst";

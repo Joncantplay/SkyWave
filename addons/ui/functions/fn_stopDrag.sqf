@@ -1,5 +1,5 @@
 /*
- * Ends moving or resizing the radio window.
+ * Ends moving or resizing a window.
  */
 skw_ui_drag = [];
 if (skw_ui_dragPfh >= 0) then {

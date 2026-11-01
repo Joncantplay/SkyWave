@@ -13,7 +13,8 @@ if (isNull _object || {count _record == 0}) exitWith {};
 private _station = _record get "class";
 private _label = "";
 if ((_record get "source") == "personal") then {
-    _station = _record get "url";
+    // Main address and backups, separated by spaces like for built-in stations.
+    _station = ([_record get "url"] + (_record get "fallbacks")) joinString " ";
     _label = _record get "name";
 };
 

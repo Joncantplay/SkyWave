@@ -46,14 +46,14 @@
   allowed.
 
 **Radio window**
-- Station list with search, sorting by name or genre, a *copyright-free only* filter and
+- Station list with search, genre filter, sorting by name or genre, a *copyright-free only* filter and
   favourites at the top.
 - Now playing: station logo or album cover, track title (click to copy), connection status.
 - On/off, random station, volume, mute for me, custom stream URL, the last ten tracks.
 - Movable and resizable; the size of text and controls is a setting.
 
 **Stations**
-- 25 built-in stations, a server-wide list and a personal list per player, editable in game in
+- 71 built-in stations, a server-wide list and a personal list per player, editable in game in
   the station manager.
 - Stations from other mods (`CfgSkywaveStations`) and from mission scripts, with conditions per
   station.
@@ -74,7 +74,7 @@
   Mode, mute all.
 
 **Server options**
-- Custom stream URLs on/off, pictures for custom streams on/off, copyright-free only, radio only
+- Switch off single built-in stations, custom stream URLs on/off, pictures for custom streams on/off, copyright-free only, radio only
   with the engine running, operation from outside the vehicle, driver and commander only, audible
   range.
 

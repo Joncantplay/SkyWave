@@ -30,6 +30,11 @@ private _sources = [];
     if (!alive _object) then {continue};
 
     (_object call skw_core_fnc_getState) params ["_station", "_volume"];
+    // The player's own volume for this radio, if they chose one.
+    private _ownVolume = _object getVariable ["skw_audio_ownVolume", -1];
+    if (_ownVolume >= 0) then {
+        _volume = _ownVolume;
+    };
     private _url = _station call skw_core_fnc_stationUrl;
     if (_url == "") then {continue};
     // Muted for this player: don't even download it. Engine off is the exception, the

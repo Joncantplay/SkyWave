@@ -49,6 +49,14 @@
             <English>Show the stations that come with SkyWave. Turn off to offer only your own stations.</English>
             <German>Die mit SkyWave gelieferten Sender anzeigen. Ausschalten, um nur eigene Sender anzubieten.</German>
         </Key>
+        <Key ID="STR_skw_core_disabledStations">
+            <English>Switched-off built-in stations</English>
+            <German>Abgeschaltete mitgelieferte Sender</German>
+        </Key>
+        <Key ID="STR_skw_core_disabledStations_tooltip">
+            <English>Class names of built-in stations nobody can choose on this server, separated by commas. Easier: radio window, Manage stations, tab Built-in.</English>
+            <German>Klassennamen mitgelieferter Sender, die auf diesem Server niemand wählen kann, durch Kommas getrennt. Einfacher: Radio-Fenster, Sender verwalten, Reiter Mitgeliefert.</German>
+        </Key>
         <Key ID="STR_skw_core_driverCommanderOnly">
             <English>Driver and commander only</English>
             <German>Nur Fahrer und Kommandant</German>

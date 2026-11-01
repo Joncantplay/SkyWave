@@ -1,6 +1,6 @@
 /*
- * Puts stations in the order of the radio window: filtered by the search text and the
- * "copyright-free only" box, sorted by the chosen column, favourites first. Personal
+ * Puts stations in the order of the radio window: filtered by the search text, the genre
+ * and the "copyright-free only" box, sorted by the chosen column, favourites first. Personal
  * stations are left out where the server forbids custom URLs (they are played by URL).
  *
  * Arguments:
@@ -21,6 +21,7 @@ private _rows = [];
         ((_x get "source") != "personal" || _urlAllowed)
         && {_search == "" || {_name find _search >= 0} || {_genre find _search >= 0}}
         && {(_x get "copyrightFree") || {!skw_ui_freeOnly}}
+        && {skw_ui_genreFilter == "" || {(_x get "genre") == skw_ui_genreFilter}}
     ) then {
         // Sort key first: genre sorts by genre, then name.
         _rows pushBack [[_name, _genre + "|" + _name] select _byGenre, _x];

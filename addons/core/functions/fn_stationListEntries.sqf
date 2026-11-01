@@ -2,7 +2,7 @@
  * Splits the text of a station list setting into its entries.
  *
  * Format: stations separated by ";", fields separated by "|":
- *     Name | URL | option | option ...
+ *     Name | URL, backup URL, ... | option | option ...
  * Options: "free" (no copyrighted music), "genre=...", "logo=..." (image URL, web page or .paa path).
  *
  * Arguments:

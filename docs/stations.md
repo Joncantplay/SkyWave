@@ -18,7 +18,7 @@ The setting *SkyWave default stations* hides the stations that come with SkyWave
 Stations are separated by `;`, the parts of a station by `|`:
 
 ```
-Name | URL | option | option ...; Next station | URL
+Name | URL, backup URL | option | option ...; Next station | URL
 ```
 
 Options (all optional, any order):
@@ -34,6 +34,14 @@ Example:
 ```
 Lo-Fi Beats | https://example.com/lofi.mp3 | free | genre=Lo-Fi; News 24 | https://example.com/news.aac | logo=https://example.com/logo.png
 ```
+
+Backup addresses are optional: put them after the main URL, separated by commas. If the main
+address fails, SkyWave tries the next one. This also works in the station manager and in the
+radio window's *Custom stream URL* field.
+
+The station manager's tab *Built-in* lists every station that comes with SkyWave or another mod.
+The host and logged-in admins can switch single stations off (and on again) for everyone on the
+server; they are then missing from every radio's list.
 
 Personal stations exist only for the player who added them. When a player tunes a radio to
 one, the radio plays its URL for everybody, labelled with the station's name. Servers that

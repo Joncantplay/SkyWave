@@ -20,7 +20,8 @@ if (_stations isEqualTo []) exitWith {
 };
 
 (_object call skw_core_fnc_getState) params ["_current"];
-private _index = _stations findIf {(_x get "class") == _current || {(_x get "url") == _current}};
+private _mainUrl = (_current splitString " ") param [0, ""];
+private _index = _stations findIf {(_x get "class") == _current || {(_x get "url") == _mainUrl}};
 _index = if (_index < 0) then {
     [0, count _stations - 1] select (_step < 0)
 } else {

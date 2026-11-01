@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0
+
+- More default stations: 71 instead of 25.
+- One consistent genre per station and a genre filter in the radio window.
+- Servers can switch off single built-in stations (station manager, tab "Built-in").
+- Backup addresses for own stations and custom URLs: several URLs separated by commas.
+- Own volume per radio: untick "For everyone" next to the volume slider.
+- Updated interface design.
+- Track change messages show the station name: "SkyWave / <station> - Now playing / <title>".
+
 ## 1.0.0
 
 First complete version.

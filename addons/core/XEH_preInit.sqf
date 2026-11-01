@@ -79,6 +79,14 @@ skw_core_stationIndex = createHashMap;
 ] call CBA_fnc_addSetting;
 
 [
+    "skw_core_disabledStations", "EDITBOX",
+    [localize "STR_skw_core_disabledStations", localize "STR_skw_core_disabledStations_tooltip"],
+    ["SkyWave", localize "STR_skw_core_category_stations"],
+    "",
+    1
+] call CBA_fnc_addSetting;
+
+[
     "skw_core_serverStations", "EDITBOX",
     [localize "STR_skw_core_serverStations", localize "STR_skw_core_stationList_tooltip"],
     ["SkyWave", localize "STR_skw_core_category_stations"],

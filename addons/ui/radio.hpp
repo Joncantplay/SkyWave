@@ -143,7 +143,7 @@ class skw_ui_radio {
             idc = 1201;
             PLACEHOLDER;
             colorText[] = {0.9, 0.9, 0.92, 1};
-            onButtonClick = "call skw_ui_fnc_copyTitle";
+            onButtonClick = "'' call skw_ui_fnc_copyTitle";
         };
         class StatusDot: RscText {
             idc = 1204;
@@ -189,10 +189,28 @@ class skw_ui_radio {
             PLACEHOLDER;
             onSliderPosChanged = "_this call skw_ui_fnc_onVolumeChanged";
         };
+        // Ticked: the volume is shared with everyone. Unticked: own volume for this radio.
+        class VolumeShared: RscCheckBox {
+            idc = 1304;
+            PLACEHOLDER;
+            tooltip = "$STR_skw_ui_volumeSharedTooltip";
+            onCheckedChanged = "_this call skw_ui_fnc_onVolumeShared";
+        };
+        class VolumeSharedLabel: RscText {
+            idc = 1305;
+            PLACEHOLDER;
+            text = "$STR_skw_ui_volumeShared";
+            tooltip = "$STR_skw_ui_volumeSharedTooltip";
+        };
         class Search: RscEdit {
             idc = 1700;
             PLACEHOLDER;
             onKeyUp = "call skw_ui_fnc_onSearch";
+        };
+        class Genre: RscCombo {
+            idc = 1704;
+            PLACEHOLDER;
+            onLBSelChanged = "_this call skw_ui_fnc_onGenre";
         };
         class FreeOnly: RscCheckBox {
             idc = 1702;
@@ -267,6 +285,7 @@ class skw_ui_radio {
         class Url: RscEdit {
             idc = 1500;
             PLACEHOLDER;
+            onKeyUp = "(_this select 0) call skw_ui_fnc_fieldTooltip";
         };
         class UrlPlay: skw_ui_button {
             idc = 1501;

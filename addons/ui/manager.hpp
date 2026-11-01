@@ -1,4 +1,6 @@
-// Station manager: edit the personal and the server-wide station lists.
+// Station manager: edit the personal and the server-wide station lists, and switch
+// built-in stations off. Positions and font sizes come from skw_ui_managerTable
+// (skw_ui_fnc_managerLayout), so the window can be moved and resized like the radio window.
 class skw_ui_manager {
     idd = 72101;
     movingEnable = 0;
@@ -7,120 +9,96 @@ class skw_ui_manager {
 
     class controlsBackground {
         class Panel: RscText {
-            idc = -1;
-            x = POS_X(5);
-            y = POS_Y(3);
-            w = SIZE_W(30);
-            h = SIZE_H(19);
+            idc = 2010;
+            PLACEHOLDER;
             colorBackground[] = COLOR_PANEL;
         };
         class Header: RscText {
             idc = 2000;
+            PLACEHOLDER;
             text = "$STR_skw_ui_managerTitle";
-            x = POS_X(5);
-            y = POS_Y(3);
-            w = SIZE_W(30);
-            h = SIZE_H(1.4);
-            sizeEx = SIZE_H(1);
             colorBackground[] = COLOR_HEADER;
         };
         class AccentLine: RscText {
-            idc = -1;
-            x = POS_X(5);
-            y = POS_Y(4.4);
-            w = SIZE_W(30);
-            h = SIZE_H(0.12);
+            idc = 2011;
+            PLACEHOLDER;
             colorBackground[] = COLOR_ACCENT;
         };
         class NameLabel: RscText {
-            idc = -1;
+            idc = 2012;
+            PLACEHOLDER;
             text = "$STR_skw_ui_name";
-            x = POS_X(19);
-            y = POS_Y(6.7);
-            w = SIZE_W(15.5);
-            h = SIZE_H(0.9);
             colorText[] = COLOR_MUTED;
         };
         class UrlLabel: RscText {
-            idc = -1;
+            idc = 2013;
+            PLACEHOLDER;
             text = "$STR_skw_ui_streamUrl";
-            x = POS_X(19);
-            y = POS_Y(8.8);
-            w = SIZE_W(15.5);
-            h = SIZE_H(0.9);
             colorText[] = COLOR_MUTED;
         };
         class GenreLabel: RscText {
-            idc = -1;
+            idc = 2014;
+            PLACEHOLDER;
             text = "$STR_skw_ui_genreOptional";
-            x = POS_X(19);
-            y = POS_Y(10.9);
-            w = SIZE_W(15.5);
-            h = SIZE_H(0.9);
             colorText[] = COLOR_MUTED;
         };
         class LogoLabel: RscText {
-            idc = -1;
+            idc = 2015;
+            PLACEHOLDER;
             text = "$STR_skw_ui_logoOptional";
-            x = POS_X(19);
-            y = POS_Y(13);
-            w = SIZE_W(15.5);
-            h = SIZE_H(0.9);
             colorText[] = COLOR_MUTED;
         };
         class FreeLabel: RscText {
-            idc = -1;
+            idc = 2016;
+            PLACEHOLDER;
             text = "$STR_skw_ui_copyrightFree";
-            x = POS_X(20.2);
-            y = POS_Y(15.2);
-            w = SIZE_W(14.3);
-            h = SIZE_H(1);
+        };
+        class GripPicture: RscPicture {
+            idc = 2021;
+            PLACEHOLDER;
+            text = "\z\skw\addons\ui\data\grip_ca.paa";
         };
     };
 
     class controls {
+        // Invisible handle over the title bar: drag to move the window.
+        class HeaderDrag: skw_ui_clickable {
+            idc = 2017;
+            PLACEHOLDER;
+        };
         class CloseX: skw_ui_button {
             idc = 2009;
+            PLACEHOLDER;
             text = "X";
-            x = POS_X(33.6);
-            y = POS_Y(3);
-            w = SIZE_W(1.4);
-            h = SIZE_H(1.4);
             colorBackground[] = COLOR_HEADER;
             onButtonClick = "closeDialog 0";
         };
         class TabPersonal: skw_ui_button {
             idc = 2001;
+            PLACEHOLDER;
             text = "$STR_skw_ui_tabPersonal";
-            x = POS_X(5.5);
-            y = POS_Y(5);
-            w = SIZE_W(6.5);
-            h = SIZE_H(1.2);
             onButtonClick = "'personal' call skw_ui_fnc_managerShow";
         };
         class TabServer: skw_ui_button {
             idc = 2002;
+            PLACEHOLDER;
             text = "$STR_skw_ui_tabServer";
-            x = POS_X(12.2);
-            y = POS_Y(5);
-            w = SIZE_W(6.5);
-            h = SIZE_H(1.2);
             onButtonClick = "'global' call skw_ui_fnc_managerShow";
+        };
+        class TabBuiltin: skw_ui_button {
+            idc = 2004;
+            PLACEHOLDER;
+            text = "$STR_skw_ui_tabBuiltin";
+            onButtonClick = "'builtin' call skw_ui_fnc_managerShow";
         };
         class Note: RscText {
             idc = 2003;
-            x = POS_X(19);
-            y = POS_Y(5);
-            w = SIZE_W(15.5);
-            h = SIZE_H(1.2);
+            PLACEHOLDER;
             colorText[] = COLOR_MUTED;
         };
         class List: RscListNBox {
             idc = 2100;
-            x = POS_X(5.5);
-            y = POS_Y(6.7);
-            w = SIZE_W(13);
-            h = SIZE_H(14.8);
+            PLACEHOLDER;
             columns[] = {0, 0.6};
             drawSideArrows = 0;
             idcLeft = -1;
@@ -130,88 +108,84 @@ class skw_ui_manager {
             colorSelectBackground2[] = COLOR_ACCENT;
             onLBSelChanged = "_this call skw_ui_fnc_managerSelect";
         };
+        // Input fields show their whole text as tooltip (skw_ui_fnc_fieldTooltip).
         class Name: RscEdit {
             idc = 2201;
-            x = POS_X(19);
-            y = POS_Y(7.6);
-            w = SIZE_W(15.5);
-            h = SIZE_H(1);
+            PLACEHOLDER;
+            onKeyUp = "(_this select 0) call skw_ui_fnc_fieldTooltip";
         };
         class Url: RscEdit {
             idc = 2202;
-            x = POS_X(19);
-            y = POS_Y(9.7);
-            w = SIZE_W(15.5);
-            h = SIZE_H(1);
+            PLACEHOLDER;
+            onKeyUp = "(_this select 0) call skw_ui_fnc_fieldTooltip";
         };
         class Genre: RscEdit {
             idc = 2203;
-            x = POS_X(19);
-            y = POS_Y(11.8);
-            w = SIZE_W(15.5);
-            h = SIZE_H(1);
+            PLACEHOLDER;
+            onKeyUp = "(_this select 0) call skw_ui_fnc_fieldTooltip";
         };
         class Logo: RscEdit {
             idc = 2204;
+            PLACEHOLDER;
             tooltip = "$STR_skw_ui_logoTooltip";
-            x = POS_X(19);
-            y = POS_Y(13.9);
-            w = SIZE_W(15.5);
-            h = SIZE_H(1);
+            skw_tooltip = "STR_skw_ui_logoTooltip";
+            onKeyUp = "(_this select 0) call skw_ui_fnc_fieldTooltip";
         };
         class Free: RscCheckBox {
             idc = 2205;
+            PLACEHOLDER;
             tooltip = "$STR_skw_ui_copyrightFreeTooltip";
-            x = POS_X(19);
-            y = POS_Y(15.2);
-            w = SIZE_W(1);
-            h = SIZE_H(1);
         };
         class New: skw_ui_button {
             idc = 2301;
+            PLACEHOLDER;
             text = "$STR_skw_ui_new";
-            x = POS_X(19);
-            y = POS_Y(16.8);
-            w = SIZE_W(5);
-            h = SIZE_H(1.2);
             onButtonClick = "call skw_ui_fnc_managerNew";
         };
         class Save: skw_ui_button {
             idc = 2302;
+            PLACEHOLDER;
             text = "$STR_skw_ui_save";
-            x = POS_X(24.25);
-            y = POS_Y(16.8);
-            w = SIZE_W(5);
-            h = SIZE_H(1.2);
             onButtonClick = "call skw_ui_fnc_managerSave";
         };
         class Delete: skw_ui_button {
             idc = 2303;
+            PLACEHOLDER;
             text = "$STR_skw_ui_delete";
-            x = POS_X(29.5);
-            y = POS_Y(16.8);
-            w = SIZE_W(5);
-            h = SIZE_H(1.2);
             onButtonClick = "call skw_ui_fnc_managerDelete";
+        };
+        class Toggle: skw_ui_button {
+            idc = 2306;
+            PLACEHOLDER;
+            text = "$STR_skw_ui_disable";
+            onButtonClick = "call skw_ui_fnc_managerToggle";
         };
         class Message: RscText {
             idc = 2304;
+            PLACEHOLDER;
             style = ST_MULTI;
             lineSpacing = 1;
-            x = POS_X(19);
-            y = POS_Y(18.3);
-            w = SIZE_W(15.5);
-            h = SIZE_H(1.9);
             colorText[] = COLOR_ACCENT;
         };
         class Close: skw_ui_button {
             idc = 2305;
+            PLACEHOLDER;
             text = "$STR_skw_ui_close";
-            x = POS_X(29.5);
-            y = POS_Y(20.3);
-            w = SIZE_W(5);
-            h = SIZE_H(1.2);
             onButtonClick = "closeDialog 0";
+        };
+        // Invisible handles on the right and bottom edge and over the grip: drag to resize.
+        class EdgeRight: skw_ui_clickable {
+            idc = 2018;
+            PLACEHOLDER;
+        };
+        class EdgeBottom: skw_ui_clickable {
+            idc = 2019;
+            PLACEHOLDER;
+        };
+        class Grip: skw_ui_clickable {
+            idc = 2020;
+            PLACEHOLDER;
+            tooltip = "$STR_skw_ui_resizeHint";
         };
     };
 };

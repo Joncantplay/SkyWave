@@ -22,11 +22,12 @@ the server (or the mission) and apply to everyone; the others are each player's 
 | Server | Operate from outside | server | off | Players standing next to a vehicle (about 4 m from it) can operate its radio. |
 | Server | Driver and commander only | server | off | Inside a vehicle only driver (pilot) and commander can operate the radio. |
 | Stations | SkyWave default stations | server | on | Offer the stations that come with SkyWave. |
+| Stations | Switched-off built-in stations | server | empty | Built-in stations nobody can choose on this server (class names, separated by commas). Easier: station manager, tab *Built-in*. |
 | Stations | Server stations | server | empty | Station list for everyone, see [stations.md](stations.md). |
 | Stations | My stations | player | empty | Personal station list, see [stations.md](stations.md). |
 | Controls | Scroll wheel entry | player | on | Show "SkyWave radio" in the action menu. With ACE the radio is also in the interaction menu. |
 | Controls | Radio window size | player | 100 % | Size of text, buttons and title bar in the radio window (80–140 %). The window itself is resized by dragging its right or bottom edge or its corner. |
-| Controls | Reset radio window | player | — | Tick and press OK: the radio window goes back to the middle of the screen at normal size (if it got lost while dragging). Unticks itself. |
+| Controls | Reset radio window | player | — | Tick and press OK: the radio window and the station manager go back to the middle of the screen at normal size (if one got lost while dragging). Unticks itself. |
 
 ## Keys
 
@@ -91,11 +92,15 @@ in the object's init field.
   and connection status. *Retry* appears next to the status when the connection was lost.
 - **Star** next to the station name: adds the station to your favourites; they stand at the
   top of the list (kept in your profile).
+- **Volume:** the slider changes the volume for everyone. Untick *For everyone* next to it to
+  keep an own volume for this radio that only you hear; tick it again to follow the shared one.
 - **Buttons:** on/off (resumes the last station), *Random station* (from the list as shown,
   search and filter apply), *Mute for me* (only you).
-- **Station list:** search, *Copyright-free only*, click a column header to sort by name or
+- **Station list:** search, genre filter, *Copyright-free only*, click a column header to sort by name or
   genre (click again to reverse). Copyright-free stations are marked, personal ones are orange.
 - **Recently played** above the list: the last ten tracks of this radio; click one to copy it.
 - **Custom stream URL** (if the server allows it) and *Manage stations* for the station lists.
+  The station manager can be moved and resized like the radio window. Hover over an input
+  field to see its whole text.
 - Status messages (setting *Status messages*) only come from the radio you sit in, stand
   next to or have open.
