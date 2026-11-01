@@ -1,3 +1,6 @@
+// Version of the mod as "major.minor.patch", for the log, the radio window and the server check.
+skw_core_version = ((getArray (configFile >> "CfgPatches" >> "skw_main" >> "versionAr")) select [0, 3]) joinString ".";
+
 // Objects with a radio that is switched on. The server owns this list and broadcasts it;
 // a joining player may already have received it before this runs, so keep that value.
 if (isNil "skw_core_radios") then {
@@ -25,6 +28,14 @@ skw_core_stationIndex = createHashMap;
 [
     "skw_core_allowCustomUrls", "CHECKBOX",
     [localize "STR_skw_core_allowCustomUrls", localize "STR_skw_core_allowCustomUrls_tooltip"],
+    ["SkyWave", localize "STR_skw_core_category_server"],
+    true,
+    1
+] call CBA_fnc_addSetting;
+
+[
+    "skw_core_offWhenEmpty", "CHECKBOX",
+    [localize "STR_skw_core_offWhenEmpty", localize "STR_skw_core_offWhenEmpty_tooltip"],
     ["SkyWave", localize "STR_skw_core_category_server"],
     true,
     1

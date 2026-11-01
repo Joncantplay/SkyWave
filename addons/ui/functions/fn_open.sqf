@@ -14,6 +14,7 @@ if !(createDialog "skw_ui_radio") exitWith {};
 
 private _display = uiNamespace getVariable ["skw_ui_display", displayNull];
 (_display displayCtrl 1000) ctrlSetText format ["SkyWave - %1", getText (configOf _object >> "displayName")];
+(_display displayCtrl 1017) ctrlSetTooltip format ["SkyWave %1", skw_core_version];
 
 // Position and size from last time, else centred at normal size.
 skw_ui_window = profileNamespace getVariable ["skw_ui_window", []];

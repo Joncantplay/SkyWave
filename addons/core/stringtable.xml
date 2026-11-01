@@ -81,6 +81,14 @@
             <English>You cannot operate this radio from here.</English>
             <German>Du kannst dieses Radio von hier aus nicht bedienen.</German>
         </Key>
+        <Key ID="STR_skw_core_offWhenEmpty">
+            <English>Switch radios off when the server is empty</English>
+            <German>Radios ausschalten, wenn der Server leer ist</German>
+        </Key>
+        <Key ID="STR_skw_core_offWhenEmpty_tooltip">
+            <English>When the last player leaves, every radio is switched off, so the next players find a quiet server.</English>
+            <German>Wenn der letzte Spieler geht, werden alle Radios ausgeschaltet, damit die nächsten Spieler einen ruhigen Server vorfinden.</German>
+        </Key>
         <Key ID="STR_skw_core_onlyCopyrightFree">
             <English>This server only allows copyright-free stations.</English>
             <German>Dieser Server erlaubt nur urheberrechtsfreie Sender.</German>
@@ -88,6 +96,10 @@
         <Key ID="STR_skw_core_personalStations">
             <English>My stations</English>
             <German>Meine Sender</German>
+        </Key>
+        <Key ID="STR_skw_core_serverMissing">
+            <English>SkyWave is not running on this server, radios cannot be switched on.</English>
+            <German>SkyWave läuft auf diesem Server nicht, Radios lassen sich nicht einschalten.</German>
         </Key>
         <Key ID="STR_skw_core_serverStations">
             <English>Server stations (all players)</English>

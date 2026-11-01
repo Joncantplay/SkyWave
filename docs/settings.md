@@ -18,6 +18,7 @@ the server (or the mission) and apply to everyone; the others are each player's 
 | Server | Allow custom stream URLs | server | on | Players may play any stream address (Zeus always may). |
 | Server | Allow images for custom streams | server | on | Logos and album covers for streams played by URL (custom URLs, players' own stations). Off: those show the default radio icon. |
 | Server | Radio only with engine running | server | off | Vehicle radios fall silent while the engine is off (the stream keeps running, so it plays on at once). Placed radios are not affected. |
+| Server | Switch radios off when the server is empty | server | on | When the last player leaves a multiplayer server, every radio is switched off. |
 | Server | Copyright-free stations only | server | off | Only stations marked copyright-free can be played. |
 | Server | Operate from outside | server | off | Players standing next to a vehicle (about 4 m from it) can operate its radio. |
 | Server | Driver and commander only | server | off | Inside a vehicle only driver (pilot) and commander can operate the radio. |

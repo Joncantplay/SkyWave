@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.1.1
+
+- Fixed: the "SkyWave radio" scroll menu entry disappeared after a revive in some missions (e.g.
+  Antistasi). It now comes back on its own.
+- New server setting: radios switch off when the last player leaves the server (on by default).
+- Players get a chat message when the server does not run SkyWave.
+- The SkyWave version is shown when hovering over the radio window's title bar.
+- Updated audio libraries for smoother playback, which helps against crackling when the game is
+  under heavy load.
+- Updated MP3 decoder with several decoding fixes.
+
 ## 1.1.0
 
 - More default stations: 71 instead of 25.

@@ -2,7 +2,9 @@
 
 ## Installing
 
-1. Install SkyWave and CBA_A3 on the server like any other mod (`-mod=@CBA_A3;@skywave`).
+1. Install SkyWave and CBA_A3 on the server like any other mod (`-mod=@CBA_A3;@skywave`). SkyWave
+   has to run on the server too: the server keeps the radios' state and checks who may operate
+   them. Without it radios cannot be switched on, and players get a chat message saying so.
 2. Copy `skywave.bikey` from `@skywave\keys\` into the server's `keys` folder if signatures are
    checked (`verifySignatures = 2`). The key stays the same for every 1.x version, so it only has
    to be installed once.

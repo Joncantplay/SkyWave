@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3805849328"><img src="https://img.shields.io/badge/Steam-Workshop-1B2838?style=for-the-badge&logo=steam&logoColor=white" alt="Steam Workshop"></a>
-  <a href="https://github.com/Joncantplay/SkyWave/releases"><img src="https://img.shields.io/badge/version-1.0.0-F9A41E?style=for-the-badge" alt="Version 1.0.0"></a>
+  <a href="https://github.com/Joncantplay/SkyWave/releases"><img src="https://img.shields.io/badge/version-1.1.1-F9A41E?style=for-the-badge" alt="Version 1.1.1"></a>
   <img src="https://img.shields.io/badge/Arma%203-2.20%2B-E8336B?style=for-the-badge" alt="Arma 3 2.20 or newer">
   <a href="https://steamcommunity.com/workshop/filedetails/?id=450814997"><img src="https://img.shields.io/badge/requires-CBA__A3-4B1270?style=for-the-badge" alt="Requires CBA_A3"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-2F6FB2?style=for-the-badge" alt="License GPL-3.0"></a>
@@ -76,7 +76,7 @@
 **Server options**
 - Switch off single built-in stations, custom stream URLs on/off, pictures for custom streams on/off, copyright-free only, radio only
   with the engine running, operation from outside the vehicle, driver and commander only, audible
-  range.
+  range, switching radios off when the server is empty.
 
 English and German.
 

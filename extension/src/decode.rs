@@ -5,13 +5,12 @@
 use std::io::{self, Read};
 use std::sync::Mutex;
 
-use symphonia::core::audio::SampleBuffer;
-use symphonia::core::codecs::DecoderOptions;
+use symphonia::core::codecs::audio::AudioDecoderOptions;
 use symphonia::core::errors::Error as SymphoniaError;
-use symphonia::core::formats::FormatOptions;
+use symphonia::core::formats::probe::Hint;
+use symphonia::core::formats::{FormatOptions, TrackType};
 use symphonia::core::io::{MediaSourceStream, ReadOnlySource};
 use symphonia::core::meta::MetadataOptions;
-use symphonia::core::probe::Hint;
 
 use crate::faad::AacDecoder;
 use crate::http::other_error;
@@ -124,41 +123,49 @@ pub fn run_mp3(reader: Box<dyn Read + Send>, sink: &mut dyn PcmSink) -> io::Resu
     let stream = MediaSourceStream::new(Box::new(source), Default::default());
     let mut hint = Hint::new();
     hint.with_extension("mp3").mime_type("audio/mpeg");
-    let probed = symphonia::default::get_probe()
-        .format(&hint, stream, &FormatOptions::default(), &MetadataOptions::default())
+    let mut format = symphonia::default::get_probe()
+        .probe(&hint, stream, FormatOptions::default(), MetadataOptions::default())
         .map_err(symphonia_error)?;
-    let mut format = probed.format;
-    let track = format.default_track().ok_or_else(|| other_error("no audio track in stream"))?;
+    let track = format
+        .default_track(TrackType::Audio)
+        .ok_or_else(|| other_error("no audio track in stream"))?;
     let track_id = track.id;
+    let params = track
+        .codec_params
+        .as_ref()
+        .and_then(|params| params.audio())
+        .ok_or_else(|| other_error("no audio codec parameters in stream"))?;
     let mut decoder = symphonia::default::get_codecs()
-        .make(&track.codec_params, &DecoderOptions::default())
+        .make_audio_decoder(params, &AudioDecoderOptions::default())
         .map_err(symphonia_error)?;
+    let mut samples: Vec<f32> = Vec::new();
 
     loop {
         if sink.stopped() {
             return Ok(());
         }
         let packet = match format.next_packet() {
-            Ok(packet) => packet,
+            Ok(Some(packet)) => packet,
+            Ok(None) => return Err(io::Error::new(io::ErrorKind::UnexpectedEof, "stream ended")),
             Err(SymphoniaError::ResetRequired) => {
                 decoder.reset();
                 continue;
             }
             Err(e) => return Err(symphonia_error(e)),
         };
-        if packet.track_id() != track_id {
+        if packet.track_id != track_id {
             continue;
         }
         match decoder.decode(&packet) {
             Ok(audio) => {
-                let spec = *audio.spec();
-                let channels = spec.channels.count();
+                let spec = audio.spec();
+                let channels = spec.channels().count();
+                let rate = spec.rate();
                 if channels == 0 || audio.frames() == 0 {
                     continue;
                 }
-                let mut samples = SampleBuffer::<f32>::new(audio.capacity() as u64, spec);
-                samples.copy_interleaved_ref(audio);
-                sink.push(samples.samples(), channels, spec.rate);
+                audio.copy_to_vec_interleaved(&mut samples);
+                sink.push(&samples, channels, rate);
             }
             Err(SymphoniaError::DecodeError(_)) => continue,
             Err(e) => return Err(symphonia_error(e)),

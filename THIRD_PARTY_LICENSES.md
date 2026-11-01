@@ -12,14 +12,20 @@ All of them allow redistribution, including on the Steam Workshop, and are compa
 
 ## Symphonia — MP3 decoder
 
-- Version: 0.5.x, https://github.com/pdeljanov/Symphonia
+- Version: 0.6.x, https://github.com/pdeljanov/Symphonia
 - License: Mozilla Public License 2.0. Source code is available at the address above;
   SkyWave uses it unmodified.
 
 ## cpal — audio output
 
-- Version: 0.15.x, https://github.com/RustAudio/cpal
+- Version: 0.18.x, https://github.com/RustAudio/cpal
 - License: Apache License 2.0
+
+## audio_thread_priority — real-time priority for the audio thread
+
+- Version: 0.35.x, https://github.com/padenot/audio_thread_priority
+- License: Mozilla Public License 2.0. Source code is available at the address above;
+  SkyWave uses it unmodified.
 
 ## native-tls — HTTPS
 
@@ -47,8 +53,7 @@ permissive licenses:
 | zmij | MIT |
 | aes, block-padding, cbc, cipher, cpufeatures, crypto-common, inout, typenum (AES-128 for encrypted HLS streams) | MIT or Apache License 2.0 |
 | generic-array | MIT |
-| arrayvec, bitflags, cfg-if, core_detect, dasp_sample, lazy_static, log, multiversion_no_op, rustversion, scopeguard, simdutf8, windows, windows-core, windows-link, windows-result, windows-sys, windows-targets, windows_x86_64_msvc | MIT or Apache License 2.0 |
+| bitflags, cfg-if, dasp_sample, lazy_static, log, num-complex, num-traits, regex-lite, smallvec, windows, windows-collections, windows-core, windows-future, windows-link, windows-numerics, windows-result, windows-strings, windows-sys, windows-threading | MIT or Apache License 2.0 |
 | bytemuck | Zlib, Apache License 2.0 or MIT |
-| encoding_rs | (Apache License 2.0 or MIT) and BSD-3-Clause |
 | schannel | MIT |
 | symphonia-core, symphonia-bundle-mp3, symphonia-metadata | Mozilla Public License 2.0 |

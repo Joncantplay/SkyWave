@@ -34,7 +34,7 @@ fn run() {
     let mut last_error = String::new();
     loop {
         match open() {
-            Ok((stream, name, failed)) => {
+            Ok((stream, id, name, failed)) => {
                 callback::log(format!("audio output: {name} at {} Hz", device_rate()));
                 last_error.clear();
                 let mut ticks = 0u32;
@@ -44,7 +44,8 @@ fn run() {
                         break;
                     }
                     ticks += 1;
-                    if ticks % 4 == 0 && default_device_name().is_some_and(|current| current != name) {
+                    // Reopen on the new default device, so its sample rate is picked up as well.
+                    if ticks % 4 == 0 && !id.is_empty() && default_device_id().is_some_and(|current| current != id) {
                         callback::log("default audio device changed");
                         break;
                     }
@@ -62,37 +63,40 @@ fn run() {
     }
 }
 
-fn default_device_name() -> Option<String> {
-    cpal::default_host().default_output_device().and_then(|d| d.name().ok())
+fn default_device_id() -> Option<String> {
+    cpal::default_host().default_output_device().and_then(|d| d.id().ok()).map(|id| id.to_string())
 }
 
-fn open() -> Result<(cpal::Stream, String, Arc<AtomicBool>), String> {
+fn open() -> Result<(cpal::Stream, String, String, Arc<AtomicBool>), String> {
     let host = cpal::default_host();
     let device = host.default_output_device().ok_or("no audio output device")?;
-    let name = device.name().unwrap_or_else(|_| "unknown device".to_string());
+    let id = device.id().map(|id| id.to_string()).unwrap_or_default();
+    let name = device.description().map(|d| d.to_string()).unwrap_or_else(|_| "unknown device".to_string());
     let supported = device.default_output_config().map_err(|e| e.to_string())?;
     let format = supported.sample_format();
     let config: cpal::StreamConfig = supported.config();
-    DEVICE_RATE.store(config.sample_rate.0, Ordering::Relaxed);
+    DEVICE_RATE.store(config.sample_rate, Ordering::Relaxed);
 
     let failed = Arc::new(AtomicBool::new(false));
     let stream = match format {
-        cpal::SampleFormat::F32 => build::<f32>(&device, &config, failed.clone()),
-        cpal::SampleFormat::I16 => build::<i16>(&device, &config, failed.clone()),
-        cpal::SampleFormat::U16 => build::<u16>(&device, &config, failed.clone()),
-        cpal::SampleFormat::I32 => build::<i32>(&device, &config, failed.clone()),
+        cpal::SampleFormat::F32 => build::<f32>(&device, config, failed.clone()),
+        cpal::SampleFormat::F64 => build::<f64>(&device, config, failed.clone()),
+        cpal::SampleFormat::I16 => build::<i16>(&device, config, failed.clone()),
+        cpal::SampleFormat::U16 => build::<u16>(&device, config, failed.clone()),
+        cpal::SampleFormat::I24 => build::<cpal::I24>(&device, config, failed.clone()),
+        cpal::SampleFormat::I32 => build::<i32>(&device, config, failed.clone()),
         other => Err(format!("unsupported sample format {other:?}")),
     }?;
     stream.play().map_err(|e| e.to_string())?;
-    Ok((stream, name, failed))
+    Ok((stream, id, name, failed))
 }
 
-fn build<T>(device: &cpal::Device, config: &cpal::StreamConfig, failed: Arc<AtomicBool>) -> Result<cpal::Stream, String>
+fn build<T>(device: &cpal::Device, config: cpal::StreamConfig, failed: Arc<AtomicBool>) -> Result<cpal::Stream, String>
 where
     T: cpal::SizedSample + cpal::FromSample<f32>,
 {
     let channels = config.channels as usize;
-    let rate = config.sample_rate.0;
+    let rate = config.sample_rate;
     let mut mix: Vec<f32> = Vec::new();
     device
         .build_output_stream(
@@ -116,9 +120,15 @@ where
                     }
                 }
             },
-            move |error| {
-                callback::log(format!("audio output error: {error}"));
-                failed.store(true, Ordering::SeqCst);
+            move |error: cpal::Error| match error.kind() {
+                // A short dropout, nothing to repair.
+                cpal::ErrorKind::Xrun => {}
+                // The stream keeps playing, just without raised thread priority.
+                cpal::ErrorKind::RealtimeDenied => callback::log(format!("audio output: {error}")),
+                _ => {
+                    callback::log(format!("audio output error: {error}"));
+                    failed.store(true, Ordering::SeqCst);
+                }
             },
             None,
         )
